@@ -1,9 +1,9 @@
 # LAB_CLASSES_102
 
-
 Create a Python class called `BankAccount` that simulates a simple bank account. The class should have the following functionalities:
 
 1. It should have a constructor that accepts the `account_holder` name and initial balance (`initial_balance`), setting the balance to zero if the initial balance is not provided.
+
 - another attribute `account_number` should be set automatically inside the initializer , auto generated bank account number. make sure it is 10 numbers and unique (not generated before for another account)
 
 2. A method called `deposit` that accepts an amount and adds it to the account balance, and then returns the updated balance.
@@ -12,22 +12,26 @@ Create a Python class called `BankAccount` that simulates a simple bank account.
 5. A method called `get_account_holder` that returns the name of the account holder.
 6. A method called `get_account_number` that returns the number of the account holder.
 
-#### Note: OOP principle where applicable such as Encapsulation, Abstraction, etc. & Use modules (& packages if needed) to organize your code. 
+#### Note: OOP principle where applicable such as Encapsulation, Abstraction, etc. & Use modules (& packages if needed) to organize your code.
 
----------
+---
 
-# Bonus 
+# Bonus
+
 ## Using your previous class `BankAccount` , we want to create a Bank Manager program.
+
 ### Objective:
+
 Create a Python program to manage a list of accounts using classes and persist to file storage using `pickle` module. The program will allow Bank managers to add new accounts, display the list of accounts, and save/load the accounts from a file, search for an account, delete an account, update an account.
 
-### Steps:
+### Steps
 
 #### Define the `BankAccount` Class (should be done from the first LAB)
 
-
 #### Create a class named `AccountManager` to manage a collection of bank accounts.
+
 The AccountManager class should have the following methods:
+
 - add_account(self, bank_account: BankAccount): Adds a bank account to the collection.
 - display_accounts(self): Displays all accounts in the collection.
 - search_accounts(self, account_number): searches for an account using the account number.
@@ -35,12 +39,10 @@ The AccountManager class should have the following methods:
 - save_to_file(self, filename: str): Saves the list of accounts to a pickle file.
 - load_from_file(self, filename: str): Loads the list of acounts from a pickle file.
 
-
 #### Implement Pickle File I/O:
 
 - The save_to_file method should serialize the list of bank accounts to a pickle file.
 - The load_from_file method should deserialize the pickle file and recreate the list of bank accounts.
-
 
 #### Create the Main Program:
 
