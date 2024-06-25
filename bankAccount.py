@@ -3,14 +3,20 @@ import string
 class BankAccount:
     initialBalance = 0
     accountNumber = 0
+    usedAccountNumber = set()
 
     def __init__ (self, account_holder:str , initial_balance:int ):
         self.account_holder = account_holder
         self.initialBalance = initial_balance 
-        self.accountNumber = ''.join(random.choices( string.digits, k=10))
+        self.accountNumber = self.generateAccountNumber()
+                
 
-    def info(self):
-        return f"Name of account {self.account_holder} balance: {self.initialBalance} account Number: {self.accountNumber}"
+    def generateAccountNumber (self):
+        while True:
+            account_number = ''.join(random.choices(string.digits, k=10))
+            if account_number not in BankAccount.usedAccountNumber:
+                BankAccount.usedAccountNumber.add(account_number)
+                return account_number
 
     def deposit (self, depositMoney:int):
         self.initialBalance = self.initialBalance + depositMoney
