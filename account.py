@@ -3,7 +3,7 @@ import pickle
 class BankAccount:
     def __init__(self,account_holder:str, initial_balance:float = 0.00)-> None:
         self.account_holder = account_holder
-        self.initial_balance = initial_balance
+        self.__initial_balance = initial_balance
         self.account_number = self.__generate_account_number()
     
     def __generate_account_number(self):
@@ -24,7 +24,7 @@ class BankAccount:
         return balance
 
     def get_balance(self):
-        return self.initial_balance
+        return self.__initial_balance
 
     def get_account_holder(self):
         return self.account_holder
@@ -46,7 +46,7 @@ class AccountManager:
     def display_accounts(self):
         print("The following are all bank accounts added: ")
         for account in self.bankAccounts:
-            print(f"Name: {account.account_holder} - Account Number: {account.account_number} - Balance: ${account.initial_balance}")
+            print(f"Name: {account.account_holder} - Account Number: {account.account_number} - Balance: ${account.get_balance()}")
         input("Press any key to continue..")
 
 
