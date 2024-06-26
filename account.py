@@ -1,9 +1,14 @@
+import uuid
 import pickle
 class BankAccount:
     def __init__(self,account_holder:str, initial_balance:float = 0.00)-> None:
         self.account_holder = account_holder
         self.initial_balance = initial_balance
-        self.account_number = generator.getNextNumber()
+        self.account_number = self.__generate_account_number()
+    
+    def __generate_account_number(self):
+        #Generating a unique 10-char string.
+        return str(uuid.uuid4())[:10]
     
     def deposit(self,amount:float):
         balance = self.initial_balance
@@ -48,7 +53,7 @@ class AccountManager:
     def search_accounts(self, account_number):
         found = False
         for account in self.bankAccounts:
-            if account.account_number == int(account_number):
+            if account.account_number == account_number:
                 found = True
                 break
         if found:
@@ -75,18 +80,4 @@ class AccountManager:
         with open(filename, 'rb') as bankAccountsFile: 
             # Call load method to deserialze 
             self.bankAccounts = pickle.load(bankAccountsFile)
-
-
-
-
-class accounNumberGenerator:
-    def __init__(self,start = 1000000000) -> None:
-        self.current = start
-    
-    def getNextNumber(self):
-        accountNumber = self.current
-        self.current += 1
-        return accountNumber
-generator = accounNumberGenerator()
-
 
