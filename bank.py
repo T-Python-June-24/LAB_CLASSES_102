@@ -45,7 +45,6 @@ class BankAccount:
     else:
       self.__balance -= amount
     return self.__balance
-  print(generate_number)
 
   # defining get account hloder method 
   def get_account_holder(self):
