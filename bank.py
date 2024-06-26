@@ -9,7 +9,7 @@ class BankAccount:
   def __init__(self, holder_name:str, initial_balance:int=0) -> None:
         #addtributes/ properties
         self.holder_name =holder_name
-        self.balance = initial_balance
+        self.__balance = initial_balance
         self.account_number = self.generate_number
 
 
@@ -21,26 +21,31 @@ class BankAccount:
         self.account_number_exist.add(account_number)
         return account_number
       
+  # setter
+  def set_balance(self, balance):
+     self.__balance
+
+  
+  # definig get balance method
+  def get_balance(self):
+        return self.__balance
+      
   ## definig class methods
 
   # definig deposite function 
   def deposit(self, amount):
     if amount > 0:
-      self.balance += amount
-    return self.balance
+      self.__balance += amount
+    return self.__balance
   
   # definig withdraw method
   def withdraw(self, amount):
-    if amount > self.balance:
+    if amount > self.__balance:
       print("Insufficient funds.")
     else:
-      self.balance -= amount
-    return self.balance
+      self.__balance -= amount
+    return self.__balance
   print(generate_number)
-
-  # definig get balance method
-  def get_balance(self):
-        return self.balance
 
   # defining get account hloder method 
   def get_account_holder(self):
@@ -49,3 +54,5 @@ class BankAccount:
   # definig get account number method 
   def get_account_number(self):
     return self.account_number
+  
+  
