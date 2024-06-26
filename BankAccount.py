@@ -1,38 +1,38 @@
 import random
 
 class BankAccount:
-    existing_acc_nums = set()
+    _existing_account_numbers = set()
 
     def __init__(self, account_holder, initial_balance=0):
-        self.acc_holder = account_holder
-        self.balance = initial_balance
-        self.acc_num = self.generate_acc_num()
+        self._account_holder = account_holder
+        self._balance = initial_balance
+        self._account_number = self._generate_unique_account_number()
 
-    def generate_acc_num(self):
+    def _generate_unique_account_number(self):
         while True:
-            acc_num = str(random.randint(1000000000, 9999999999))
-            if acc_num not in BankAccount.existing_acc_nums:
-                BankAccount.existing_acc_nums.add(acc_num)
-                return acc_num
+            account_number = str(random.randint(1000000000, 9999999999))
+            if account_number not in BankAccount._existing_account_numbers:
+                BankAccount._existing_account_numbers.add(account_number)
+                return account_number
 
     def deposit(self, amount):
         if amount > 0:
-            self.balance += amount
-        return self.balance
+            self._balance += amount
+        return self._balance
 
     def withdraw(self, amount):
         if amount > 0:
-            if self.balance >= amount:
-                self.balance -= amount
+            if self._balance >= amount:
+                self._balance -= amount
             else:
                 print("Insufficient funds.")
-        return self.balance
+        return self._balance
 
     def get_balance(self):
-        return self.balance
+        return self._balance
 
     def get_account_holder(self):
-        return self.acc_holder
+        return self._account_holder
 
     def get_account_number(self):
-        return self.acc_num
+        return self._account_number
