@@ -18,7 +18,7 @@ Create a Python class called `BankAccount` that simulates a simple bank account.
 
 # Bonus 
 ## Using your previous class `BankAccount` , we want to create a Bank Manager program.
-### Objective:
+### Objective
 Create a Python program to manage a list of accounts using classes and persist to file storage using `pickle` module. The program will allow Bank managers to add new accounts, display the list of accounts, and save/load the accounts from a file, search for an account, delete an account, update an account.
 
 ### Steps:
