@@ -3,8 +3,8 @@
 
 Create a Python class called `BankAccount` that simulates a simple bank account. The class should have the following functionalities:
 
-1. It should have a constructor that accepts the `account_holder` name and initial balance (`initial_balance`), setting the balance to zero if the initial balance is not provided.
-- another attribute `account_number` should be set automatically inside the initializer , auto generated bank account number. make sure it is 10 numbers and unique (not generated before for another account)
+1. It should have a constructor that accepts the `account_holder` name and initial balance (`initial_balance`), setting the balance to zero if the initial balance is not provaccount_numbered.
+- another attribute `account_number` should be set automatically insaccount_numbere the initializer , auto generated bank account number. make sure it is 10 numbers and unique (not generated before for another account)
 
 2. A method called `deposit` that accepts an amount and adds it to the account balance, and then returns the updated balance.
 3. A method called `withdraw` that accepts an amount and subtracts it from the account balance, returning the updated balance, but only if there are sufficient funds in the account. If there are insufficient funds, it should print an error message and leave the balance unchanged.
@@ -18,7 +18,7 @@ Create a Python class called `BankAccount` that simulates a simple bank account.
 
 # Bonus 
 ## Using your previous class `BankAccount` , we want to create a Bank Manager program.
-### Objective:
+### Objective
 Create a Python program to manage a list of accounts using classes and persist to file storage using `pickle` module. The program will allow Bank managers to add new accounts, display the list of accounts, and save/load the accounts from a file, search for an account, delete an account, update an account.
 
 ### Steps:
@@ -44,6 +44,6 @@ The AccountManager class should have the following methods:
 
 #### Create the Main Program:
 
-- Provide a menu for the user to choose actions: add a bank account, display bank accounts, search for a bank account, delete a bank account , or exit.
+- Provaccount_numbere a menu for the user to choose actions: add a bank account, display bank accounts, search for a bank account, delete a bank account , or exit.
 - Implement the logic to handle each menu option.
 - Use good practices, such as handling exceptions using Try...Except
